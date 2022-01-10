@@ -11,22 +11,21 @@ public class CompanyService : ICompanyService
     private readonly List<Company> _companies;
     public CompanyService()
     {
-        var sampleCompany = new Company()
-        {
-            Id = 1,
-            CompanyName = "Test Company",
-            CompanyDescription = "Test Description for Test Company",
-            CompanyAccesses = new List<Access> { new Access() { Id = 1, Name = "TestAccess", Description = "Test description for test Access" } }
-        };
-        _company[sampleCompany.Id] = sampleCompany;
-
-        //_companies = Controller.DatabaseRequests.GetCompanies();
-        //foreach(var company in _companies)
+        //var sampleCompany = new Company()
         //{
-        //    company.CompanyAccesses = Controller.DatabaseRequests.GetAccesses(company.Id);
-        //    _company.Add(company.Id, company);
-        //    break;
-        //}
+        //    Id = 1,
+        //    CompanyName = "Test Company",
+        //    CompanyDescription = "Test Description for Test Company",
+        //    CompanyAccesses = new List<Access> { new Access() { Id = 1, Name = "TestAccess", Description = "Test description for test Access" } }
+        //};
+        //_company[sampleCompany.Id] = sampleCompany;
+
+        _companies = Controller.DatabaseRequests.GetCompanies();
+        foreach (var company in _companies)
+        {
+            company.CompanyAccesses = Controller.DatabaseRequests.GetAccesses(company.Id);
+            _company.Add(company.Id, company);
+        }
     }
 
     private readonly Dictionary<int, Company> _company = new();

@@ -15,9 +15,9 @@ const company={
         </tr>
         <tbody>
             <tr v-for="com in companies">
-                <td>{{com.Id}}</td>
-                <td>{{com.CompanyName}}</td>
-                <td>{{com.CompanyDescription}}</td>
+                <td>{{com.id}}</td>
+                <td>{{com.companyName}}</td>
+                <td>{{com.companyDescription}}</td>
             </tr>
         </tbody>
     </thead>
