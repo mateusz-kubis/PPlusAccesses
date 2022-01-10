@@ -5,7 +5,7 @@ namespace PPlusDostepy.Controller
 {
     public static class DatabaseRequests
     {
-        static readonly string ConnectionSQL = @"Server=DESKTOP-TKR85BK;user=sa;password=podajhaslo;database=PPLUS_TESTY";
+        static readonly string ConnectionSQL = @"Server=jakisserver;user=jakislogin;password=jakieshaslo;database=jakasbaza";
         readonly static SqlConnection connect = new SqlConnection(ConnectionSQL);
 
         public static List<Model.Company> GetCompanies()
