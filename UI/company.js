@@ -4,23 +4,23 @@ const company={
     <thead>
         <tr>
             <th>
-                CompanyId
+                Id
             </th>
             <th>
-                CompanyName
+                Akronim
             </th>
             <th>
-                CompanyDescription
+                Nazwa
             </th>
         </tr>
+        </thead>
         <tbody>
             <tr v-for="com in companies">
                 <td>{{com.id}}</td>
-                <td>{{com.companyName}}</td>
+                <td><a href="">{{com.companyName}}</a></td>
                 <td>{{com.companyDescription}}</td>
             </tr>
         </tbody>
-    </thead>
     </table>
     `,
 
